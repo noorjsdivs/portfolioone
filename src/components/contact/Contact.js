@@ -22,20 +22,20 @@ const Contact = () => {
   const handleSend = (e) => {
     e.preventDefault();
     if (username === "") {
-      setErrMsg("Username is required!");
+      setErrMsg("Votre nom et prenom!");
     } else if (phoneNumber === "") {
-      setErrMsg("Phone number is required!");
+      setErrMsg("Numéro de téléphone svp!");
     } else if (email === "") {
-      setErrMsg("Please give your Email!");
+      setErrMsg("Votre e-email svp!");
     } else if (!emailValidation(email)) {
-      setErrMsg("Give a valid Email!");
+      setErrMsg("E-mail valide svp!");
     } else if (subject === "") {
-      setErrMsg("Plese give your Subject!");
+      setErrMsg("L'objet s'il vous plait!");
     } else if (message === "") {
-      setErrMsg("Message is required!");
+      setErrMsg("Veuillez remplir le message svp!");
     } else {
       setSuccessMsg(
-        `Thank you dear ${username}, Your Messages has been sent Successfully!`
+        `Merci à vous ${username}, Votre message est envoyé!`
       );
       setErrMsg("");
       setUsername("");
@@ -51,33 +51,33 @@ const Contact = () => {
       className="w-full py-20 border-b-[1px] border-b-black"
     >
       <div className="flex justify-center items-center text-center">
-        <Title title="CONTACT" des="Contact With Me" />
+        <Title title="CONTACT" des="Me contacter" />
       </div>
       <div className="w-full">
         <div className="w-full h-auto flex flex-col lgl:flex-row justify-between">
           <ContactLeft />
-          <div className="w-full lgl:w-[60%] h-full py-10 bg-gradient-to-r from-[#1e2024] to-[#23272b] flex flex-col gap-8 p-4 lgl:p-8 rounded-lg shadow-shadowOne">
+          <div className="w-full lgl:w-[60%] h-full py-10 bg-gradient-to-r from-[#001233] to-[#001233] flex flex-col gap-8 p-4 lgl:p-8 rounded-lg shadow-shadowOne">
             <form className="w-full flex flex-col gap-4 lgl:gap-6 py-2 lgl:py-5">
               {errMsg && (
-                <p className="py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center text-orange-500 text-base tracking-wide animate-bounce">
+                <p className="py-3 bg-gradient-to-r from-[#023e7d] to-[#023e7d] shadow-shadowOne text-center text-orange-500 text-base tracking-wide animate-bounce">
                   {errMsg}
                 </p>
               )}
               {successMsg && (
-                <p className="py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center text-green-500 text-base tracking-wide animate-bounce">
+                <p className="py-3 bg-gradient-to-r from-[#023e7d] to-[#023e7d] shadow-shadowOne text-center text-green-500 text-base tracking-wide animate-bounce">
                   {successMsg}
                 </p>
               )}
               <div className="w-full flex flex-col lgl:flex-row gap-10">
                 <div className="w-full lgl:w-1/2 flex flex-col gap-4">
                   <p className="text-sm text-gray-400 uppercase tracking-wide">
-                    Your name
+                    Nom et prénom
                   </p>
                   <input
                     onChange={(e) => setUsername(e.target.value)}
                     value={username}
                     className={`${
-                      errMsg === "Username is required!" &&
+                      errMsg === "Votre nom et prenom!" &&
                       "outline-designColor"
                     } contactInput`}
                     type="text"
@@ -85,13 +85,13 @@ const Contact = () => {
                 </div>
                 <div className="w-full lgl:w-1/2 flex flex-col gap-4">
                   <p className="text-sm text-gray-400 uppercase tracking-wide">
-                    Phone Number
+                    Numéro téléphone
                   </p>
                   <input
                     onChange={(e) => setPhoneNumber(e.target.value)}
                     value={phoneNumber}
                     className={`${
-                      errMsg === "Phone number is required!" &&
+                      errMsg === "Numéro de téléphone svp!" &&
                       "outline-designColor"
                     } contactInput`}
                     type="text"
@@ -100,13 +100,13 @@ const Contact = () => {
               </div>
               <div className="flex flex-col gap-4">
                 <p className="text-sm text-gray-400 uppercase tracking-wide">
-                  Email
+                  E-mail
                 </p>
                 <input
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                   className={`${
-                    errMsg === "Please give your Email!" &&
+                    errMsg === "Votre e-email svp!" &&
                     "outline-designColor"
                   } contactInput`}
                   type="email"
@@ -114,13 +114,13 @@ const Contact = () => {
               </div>
               <div className="flex flex-col gap-4">
                 <p className="text-sm text-gray-400 uppercase tracking-wide">
-                  Subject
+                  Objet
                 </p>
                 <input
                   onChange={(e) => setSubject(e.target.value)}
                   value={subject}
                   className={`${
-                    errMsg === "Plese give your Subject!" &&
+                    errMsg === "L'objet s'il vous plait!" &&
                     "outline-designColor"
                   } contactInput`}
                   type="text"
@@ -134,7 +134,7 @@ const Contact = () => {
                   onChange={(e) => setMessage(e.target.value)}
                   value={message}
                   className={`${
-                    errMsg === "Message is required!" && "outline-designColor"
+                    errMsg === "Veuillez remplir le message svp!" && "outline-designColor"
                   } contactTextArea`}
                   cols="30"
                   rows="8"
@@ -143,18 +143,18 @@ const Contact = () => {
               <div className="w-full">
                 <button
                   onClick={handleSend}
-                  className="w-full h-12 bg-[#141518] rounded-lg text-base text-gray-400 tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-designColor border-transparent"
+                  className="w-full h-12 bg-[#001845] rounded-lg text-base text-white-700 tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-designColor border-transparent"
                 >
-                  Send Message
+                  Envoyer
                 </button>
               </div>
               {errMsg && (
-                <p className="py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center text-orange-500 text-base tracking-wide animate-bounce">
+                <p className="py-3 bg-gradient-to-r from-[#0a1128] to-[#011638] shadow-shadowOne text-center text-orange-500 text-base tracking-wide animate-bounce">
                   {errMsg}
                 </p>
               )}
               {successMsg && (
-                <p className="py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center text-green-500 text-base tracking-wide animate-bounce">
+                <p className="py-3 bg-gradient-to-r from-[#0a1128] to-[#011638] shadow-shadowOne text-center text-green-500 text-base tracking-wide animate-bounce">
                   {successMsg}
                 </p>
               )}
