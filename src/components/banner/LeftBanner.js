@@ -1,16 +1,22 @@
-import React from 'react'
+import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaReact } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaReact,
+  FaGithub,
+} from "react-icons/fa";
 import { SiTailwindcss, SiFigma, SiNextdotjs } from "react-icons/si";
 
 const LeftBanner = () => {
-    const [text] = useTypewriter({
-      words: ["Professional Coder.", "Full Stack Developer.", "UI Designer."],
-      loop: true,
-      typeSpeed: 20,
-      deleteSpeed: 10,
-      delaySpeed: 2000,
-    });
+  const [text] = useTypewriter({
+    words: ["Professional Coder.", "Full Stack Developer.", "UI Designer."],
+    loop: true,
+    typeSpeed: 20,
+    deleteSpeed: 10,
+    delaySpeed: 2000,
+  });
   return (
     <div className="w-full lgl:w-1/2 flex flex-col gap-20">
       <div className="flex flex-col gap-5">
@@ -38,15 +44,26 @@ const LeftBanner = () => {
             Find me in
           </h2>
           <div className="flex gap-4">
-            <span className="bannerIcon">
-              <FaFacebookF />
-            </span>
-            <span className="bannerIcon">
-              <FaTwitter />
-            </span>
-            <span className="bannerIcon">
-              <FaLinkedinIn />
-            </span>
+            <a href="https://github.com/noorjsdivs/portfolioone" target="blank">
+              <span className="bannerIcon">
+                <FaGithub />
+              </span>
+            </a>
+            <a href="https://github.com/noorjsdivs/portfolioone" target="blank">
+              <span className="bannerIcon">
+                <FaFacebookF />
+              </span>
+            </a>
+            <a href="https://github.com/noorjsdivs/portfolioone" target="blank">
+              <span className="bannerIcon">
+                <FaTwitter />
+              </span>
+            </a>
+            <a href="https://github.com/noorjsdivs/portfolioone" target="blank">
+              <span className="bannerIcon">
+                <FaLinkedinIn />
+              </span>
+            </a>
           </div>
         </div>
         <div>
@@ -71,6 +88,6 @@ const LeftBanner = () => {
       </div>
     </div>
   );
-}
+};
 
-export default LeftBanner
+export default LeftBanner;
